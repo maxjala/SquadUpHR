@@ -10,7 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
-        @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView! {
+        didSet{
+            collectionView?.dataSource = self
+            collectionView?.delegate = self
+        }
+    }
         
         var skillCategory = SkillCategory.fetchInterests()
         let cellScaling: CGFloat = 0.6
@@ -29,8 +34,7 @@ class ViewController: UIViewController {
             layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
             collectionView?.contentInset = UIEdgeInsets(top: insetY, left: insetX, bottom: insetY, right: insetX)
             
-            collectionView?.dataSource = self
-            collectionView?.delegate = self
+            self.navigationController?.navigationBar.isHidden = true
         }
     }
     
@@ -66,8 +70,14 @@ class ViewController: UIViewController {
             targetContentOffset.pointee = offset
         }
         
-        func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-            //let
+        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            let specificCategory = skillCategory[indexPath.item]
+            
+            guard let vc = storyboard?.instantiateViewController(withIdentifier: "SpecificCategoryVC") as? SpecificCategoryVC else {return}
+            
+            vc.category = specificCategory
+            
+            navigationController?.pushViewController(vc, animated: true)
         }
         
         
