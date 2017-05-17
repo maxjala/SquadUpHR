@@ -10,6 +10,11 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    
+    let mockProfile = ["name":"nick",
+                       "age":12,
+                       "project": "project A"] as [String : Any]
+    
     @IBOutlet weak var profileImageView: UIImageView!
     
     @IBOutlet weak var skillsButton: UIButton!{
