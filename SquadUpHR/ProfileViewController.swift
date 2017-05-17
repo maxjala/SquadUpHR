@@ -64,9 +64,6 @@ class ProfileViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //fetchProjects()
-        //fetchJSONDetails("", convertToDict(projectInfo: ))
-        let JSONResponse = fetchJSONResponse("")
         
         
     }
@@ -103,60 +100,6 @@ class ProfileViewController: UIViewController {
         return nil
         
     }
-    
-    func fetchJSONResponse(_ url: String) -> [[String: Any]]? {
-        //call the json to fetch all Projects
-        guard let validProjectToken = UserDefaults.standard.string(forKey: "AUTH_TOKEN") else {return nil}
-        
-        let url = URL(string: "")
-        var createdArray : [Any] = []
-        
-        var urlRequest = URLRequest(url: url!)
-        urlRequest.httpMethod = "GET"
-        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-type")
-        
-        let urlSession = URLSession(configuration: URLSessionConfiguration.default)
-        
-        let dataTask = urlSession.dataTask(with: urlRequest) { (data,response,error) in
-            
-            if let validError = error {
-                print(validError.localizedDescription)
-            }
-            
-            if let httpResponse = response as? HTTPURLResponse {
-                if httpResponse.statusCode == 200 {
-                    do {
-                        let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
-                        
-                        guard let validJSON = jsonResponse as? [[String : Any]] else {return}
-                        //MARK TO CHECK
-//                        for each in validJSON {
-//                            let newItem = objectConstructor
-//                                createdArray.append(newItem)
-//                        }
-                        
-                        
-                        DispatchQueue.main.async {
-                            return validJSON
-                            //self.tableView.reloadData()
-                        }
-                    }catch let jsonError as NSError {
-                    
-                    }
-                }
-            }
-        
-    }
-        dataTask.resume()
-        return nil
-    }
-    
-//    func createObjectsFromJSON(_ response: [[String:Any]]) -> [Any]? {
-//        for each in response {
-//            let newItem =
-//        }
-//    }
-//    
     
     
 }
