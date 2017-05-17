@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hu8-e4-9iv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="svr-oF-iBX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -168,6 +168,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J2e-lU-dgz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1788" y="136.28185907046478"/>
+        </scene>
+        <!--Browse TutorVC-->
+        <scene sceneID="THN-p6-CeQ">
+            <objects>
+                <viewController storyboardIdentifier="BrowseTutorVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="svr-oF-iBX" customClass="BrowseTutorVC" customModule="SquadUpHR" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xnr-wF-eUZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="ggE-d3-58d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ICp-0M-4Jr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fih-kS-5nF">
+                                <rect key="frame" x="16" y="36" width="343" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="Gff-DM-iro"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xZ1-mp-2FL">
+                                <rect key="frame" x="0.0" y="139" width="375" height="453"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAh-Sg-blz">
+                                <rect key="frame" x="164" y="600" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="emailButtonTapped:" destination="svr-oF-iBX" eventType="touchUpInside" id="ysc-G7-zZg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fih-kS-5nF" firstAttribute="top" secondItem="Xnr-wF-eUZ" secondAttribute="bottom" constant="16" id="3go-3I-xVR"/>
+                            <constraint firstItem="fih-kS-5nF" firstAttribute="leading" secondItem="ICp-0M-4Jr" secondAttribute="leadingMargin" id="PyJ-v7-9YQ"/>
+                            <constraint firstItem="xZ1-mp-2FL" firstAttribute="leading" secondItem="ICp-0M-4Jr" secondAttribute="leading" id="hwU-Hc-med"/>
+                            <constraint firstItem="xZ1-mp-2FL" firstAttribute="top" secondItem="fih-kS-5nF" secondAttribute="bottom" constant="36" id="hwm-CL-qKL"/>
+                            <constraint firstItem="fih-kS-5nF" firstAttribute="trailing" secondItem="ICp-0M-4Jr" secondAttribute="trailingMargin" id="iy3-Gw-nvv"/>
+                            <constraint firstAttribute="trailing" secondItem="xZ1-mp-2FL" secondAttribute="trailing" id="k1P-3W-2P5"/>
+                            <constraint firstItem="ggE-d3-58d" firstAttribute="top" secondItem="xZ1-mp-2FL" secondAttribute="bottom" constant="75" id="vPl-g8-to6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="connectLabel" destination="fih-kS-5nF" id="sbd-uE-4Fr"/>
+                        <outlet property="tableView" destination="xZ1-mp-2FL" id="1IF-d9-Akl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OPl-c5-JLE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2549.5999999999999" y="136.28185907046478"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hKL-rz-2mD">
