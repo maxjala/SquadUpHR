@@ -51,11 +51,13 @@ class FetchJSON {
         return nil
     }
     
-    func createProjects(jsonResponse: [[String : Any]]) -> [Project] {
+    func createObjects(jsonResponse: [[String : Any]]) -> [Any] {
         
-        var projects : [Project] = []
+        var returnedArray : [Any] = []
         
         for each in jsonResponse {
+            
+            //Create Projects
             if let projectID = each["projectId"] as? Int,
                 let userID = each["userId"] as? Int,
                 let status = each["status"] as? Int,
@@ -64,13 +66,31 @@ class FetchJSON {
                 
                 let project = Project(anID: projectID, aUserID: userID, aStatus: status, aTitle: projectTitle, aDesc: projectDesc)
                 
-                projects.append(project)
+                //projects.append(project)
+                returnedArray.append(project)
                 //return projects
             }
+            
+            //Create Employees
+            if let employeeID = each["private_token"] as? String,
+                let firstName = each["firstName"] as? String,
+                let lastName = each["lastName"] as? String,
+                let jobTitle = each ["jobTitle"] as? String,
+                let department = each["department"] as? String,
+                let email = each["email"] as? String {
+                
+                let employee = Employee(anID: employeeID, aJobTitle: jobTitle, aDepartment: department, aFirstName: firstName, aLastName: lastName, anEmail: email)
+                //projects.append(project)
+                returnedArray.append(employee)
+                //return projects
+            }
+            
+            
         }
         
-        return projects
+        return returnedArray
         
     }
+    
 
 }

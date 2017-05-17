@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         }
     }
         
-        var skillCategory = SkillCategory.fetchInterests()
+        var skillCategory = SkillCategory.fetchCategories()
         let cellScaling: CGFloat = 0.6
         
         override func viewDidLoad() {

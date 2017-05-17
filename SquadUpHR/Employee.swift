@@ -16,17 +16,20 @@ class Employee{
     var companyID: Int = 0
     var accessLevel: Int = 0
     var email: String = ""
-    var employeeID = "private_token"
+    var employeeID : String = ""
     var fullName: String = ""
     
-    init(aJobTitle: String, aDepartment: String, aCompanyID: Int, anAccessLevel: Int) {
     
-       fullName = firstName + lastName
-        
+    init(anID: String, aJobTitle: String, aDepartment: String, aFirstName: String, aLastName: String, anEmail: String) {
+    
+        employeeID = anID
         jobTitle = aJobTitle
         department = aDepartment
-        companyID = aCompanyID
-        accessLevel = anAccessLevel
+        firstName = aFirstName
+        lastName = aLastName
+        email = anEmail
+        
+        fullName = firstName + lastName
         
     }
     
