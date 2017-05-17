@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A042F381ECC27C600BC4435 /* FetchJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A042F371ECC27C600BC4435 /* FetchJSON.swift */; };
 		1A81F71A1ECAF6C30009C4C5 /* SkillCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A81F7161ECAF6C30009C4C5 /* SkillCategory.swift */; };
 		1A81F71B1ECAF6C30009C4C5 /* SkillCategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A81F7171ECAF6C30009C4C5 /* SkillCategoryViewCell.swift */; };
 		1A81F71F1ECAF72B0009C4C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A81F71E1ECAF72B0009C4C5 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A042F371ECC27C600BC4435 /* FetchJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchJSON.swift; sourceTree = "<group>"; };
 		1A81F7161ECAF6C30009C4C5 /* SkillCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillCategory.swift; sourceTree = "<group>"; };
 		1A81F7171ECAF6C30009C4C5 /* SkillCategoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillCategoryViewCell.swift; sourceTree = "<group>"; };
 		1A81F71E1ECAF72B0009C4C5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 		7AAB93801ECAB6C4007FFE1A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				1A042F371ECC27C600BC4435 /* FetchJSON.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				7ADDC47D1ECB1B9700796170 /* Experience.swift in Sources */,
 				7ADDC4831ECC293300796170 /* TeamCollectionViewCell.swift in Sources */,
 				1A81F71B1ECAF6C30009C4C5 /* SkillCategoryViewCell.swift in Sources */,
+				1A042F381ECC27C600BC4435 /* FetchJSON.swift in Sources */,
 				1AA657BB1ECBE86E00A46378 /* EmployeeTableViewCell.swift in Sources */,
 				7ADDC4701ECB163E00796170 /* SkillsTableViewCell.swift in Sources */,
 				1AB279251ECAF0C100C6F02B /* (null) in Sources */,
