@@ -8,9 +8,9 @@
 
 import Foundation
 
-class FetchJSON {
+class JSONConverter {
     
-    func fetchJSONResponse(_ url: String) -> [[String: Any]]? {
+    static func fetchJSONResponse(_ url: String) -> [[String: Any]]? {
         //call the json to fetch all Projects
         guard let validToken = UserDefaults.standard.string(forKey: "AUTH_TOKEN") else {return nil}
         
@@ -51,7 +51,7 @@ class FetchJSON {
         return nil
     }
     
-    func createObjects(jsonResponse: [[String : Any]]) -> [Any] {
+    static func createObjects(_ jsonResponse: [[String : Any]]) -> [Any] {
         
         var returnedArray : [Any] = []
         

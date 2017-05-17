@@ -17,16 +17,34 @@ class BrowseTutorVC: UIViewController, MFMailComposeViewControllerDelegate {
         didSet{
             tableView.delegate = self
             tableView.dataSource = self
-            
             tableView.register(EmployeeTableViewCell.cellNib, forCellReuseIdentifier: EmployeeTableViewCell.cellIdentifier)
         }
     }
+    
+    var employees : [Employee] = []
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        mockEmployees()
+    }
+    
+    func mockEmployees() {
+        //let emp1 = Employee(anID: "123", aJobTitle: "iOS Developer", aDepartment: "IT", aFirstName: "Max", aLastName: "Jala", anEmail: "maxjala@gmail.com")
+        //let emp2 = Employee(anID: "123", aJobTitle: "iOS Developer", aDepartment: "IT", aFirstName: "Max", aLastName: "Jala", anEmail: "maxjala@gmail.com")
+        //let emp3 = Employee(anID: "123", aJobTitle: "iOS Developer", aDepartment: "IT", aFirstName: "Max", aLastName: "Jala", anEmail: "maxjala@gmail.com")
+        
+        let emp1 = ["private_token": "12313", "firstName": "Max", "lastName": "Jala", "jobTitle": "iOS Developer", "department": "IT", "email": "maxjala@gmail.com"]
+        let emp2 = ["private_token": "12313", "firstName": "Max", "lastName": "Jala", "jobTitle": "iOS Developer", "department": "IT", "email": "maxjala@gmail.com"]
+        let emp3 = ["private_token": "12313", "firstName": "Max", "lastName": "Jala", "jobTitle": "iOS Developer", "department": "IT", "email": "maxjala@gmail.com"]
+        
+        let mockArray : [[String:Any]] = [emp1,emp2,emp3]
+        
+        employees = JSONConverter.createObjects(mockArray) as! [Employee]
+        
     }
 
     @IBAction func emailButtonTapped(_ sender: Any) {
@@ -57,12 +75,17 @@ class BrowseTutorVC: UIViewController, MFMailComposeViewControllerDelegate {
 extension BrowseTutorVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 0
+        return employees.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: EmployeeTableViewCell.cellIdentifier) as? EmployeeTableViewCell else {return UITableViewCell()}
+        
+        let employee = employees[indexPath.row]
+        
+        cell.nameLabel.text = employee.fullName
+        cell.jobTitleLabel.text = employee.jobTitle
         
         return cell
     }
