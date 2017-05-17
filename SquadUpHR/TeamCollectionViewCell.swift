@@ -15,11 +15,11 @@ class TeamCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var roleLabel: UILabel!
     
-    var teamSelection: Employee? {
-        didSet{
-        
-        }
-    }
+//    var teamSelection: Employee? {
+//        didSet{
+//        
+//        }
+//    }
     
     override func layoutSubviews() {
         super.layoutSubviews()
