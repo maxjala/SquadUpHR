@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A042F381ECC27C600BC4435 /* FetchJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A042F371ECC27C600BC4435 /* FetchJSON.swift */; };
+		1A042F381ECC27C600BC4435 /* JSONConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A042F371ECC27C600BC4435 /* JSONConverter.swift */; };
 		1A81F71A1ECAF6C30009C4C5 /* SkillCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A81F7161ECAF6C30009C4C5 /* SkillCategory.swift */; };
 		1A81F71B1ECAF6C30009C4C5 /* SkillCategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A81F7171ECAF6C30009C4C5 /* SkillCategoryViewCell.swift */; };
 		1A81F71F1ECAF72B0009C4C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A81F71E1ECAF72B0009C4C5 /* ViewController.swift */; };
@@ -22,6 +22,11 @@
 		1AB279211ECAB08C00C6F02B /* (null) in Sources */ = {isa = PBXBuildFile; };
 		1AB279231ECAB73700C6F02B /* (null) in Sources */ = {isa = PBXBuildFile; };
 		1AB279251ECAF0C100C6F02B /* (null) in Sources */ = {isa = PBXBuildFile; };
+		1AB9FDEA1ECC52230060AE80 /* EmployeeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB9FDE91ECC52230060AE80 /* EmployeeTableViewCell.xib */; };
+		1AB9FDED1ECC6EDB0060AE80 /* SkillCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB9FDEB1ECC6EDB0060AE80 /* SkillCollectionViewCell.swift */; };
+		1AB9FDEE1ECC6EDB0060AE80 /* SkillCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB9FDEC1ECC6EDB0060AE80 /* SkillCollectionViewCell.xib */; };
+		1AB9FDF11ECC91D70060AE80 /* ProjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB9FDEF1ECC91D70060AE80 /* ProjectCollectionViewCell.swift */; };
+		1AB9FDF21ECC91D70060AE80 /* ProjectCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB9FDF01ECC91D70060AE80 /* ProjectCollectionViewCell.xib */; };
 		7ADDC46B1ECB0C0000796170 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADDC46A1ECB0C0000796170 /* ProfileViewController.swift */; };
 		7ADDC4701ECB163E00796170 /* SkillsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADDC46E1ECB163E00796170 /* SkillsTableViewCell.swift */; };
 		7ADDC4711ECB163E00796170 /* SkillsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7ADDC46F1ECB163E00796170 /* SkillsTableViewCell.xib */; };
@@ -37,14 +42,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1A042F371ECC27C600BC4435 /* FetchJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchJSON.swift; sourceTree = "<group>"; };
+		1A042F371ECC27C600BC4435 /* JSONConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONConverter.swift; sourceTree = "<group>"; };
 		1A81F7161ECAF6C30009C4C5 /* SkillCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillCategory.swift; sourceTree = "<group>"; };
 		1A81F7171ECAF6C30009C4C5 /* SkillCategoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillCategoryViewCell.swift; sourceTree = "<group>"; };
 		1A81F71E1ECAF72B0009C4C5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1A81F7201ECB0C6E0009C4C5 /* SpecificCategoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificCategoryVC.swift; sourceTree = "<group>"; };
 		1AA657B51ECB40FE00A46378 /* SkillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillTableViewCell.swift; sourceTree = "<group>"; };
 		1AA657B91ECBE86E00A46378 /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
-		1AA657BA1ECBE86E00A46378 /* EmployeeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmployeeTableViewCell.xib; sourceTree = "<group>"; };
 		1AA657BF1ECBEBCE00A46378 /* BrowseTutorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseTutorVC.swift; sourceTree = "<group>"; };
 		1AB2790B1ECAACDD00C6F02B /* SquadUpHR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SquadUpHR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB2790E1ECAACDD00C6F02B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +56,11 @@
 		1AB279151ECAACDD00C6F02B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AB279181ECAACDD00C6F02B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1AB2791A1ECAACDD00C6F02B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AB9FDE91ECC52230060AE80 /* EmployeeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmployeeTableViewCell.xib; sourceTree = "<group>"; };
+		1AB9FDEB1ECC6EDB0060AE80 /* SkillCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillCollectionViewCell.swift; sourceTree = "<group>"; };
+		1AB9FDEC1ECC6EDB0060AE80 /* SkillCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkillCollectionViewCell.xib; sourceTree = "<group>"; };
+		1AB9FDEF1ECC91D70060AE80 /* ProjectCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectCollectionViewCell.swift; sourceTree = "<group>"; };
+		1AB9FDF01ECC91D70060AE80 /* ProjectCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectCollectionViewCell.xib; sourceTree = "<group>"; };
 		7AAB937B1ECAB69F007FFE1A /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		7AAB93841ECAB799007FFE1A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7ADDC46A1ECB0C0000796170 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -128,9 +137,13 @@
 			isa = PBXGroup;
 			children = (
 				1A81F7171ECAF6C30009C4C5 /* SkillCategoryViewCell.swift */,
+				1AB9FDEB1ECC6EDB0060AE80 /* SkillCollectionViewCell.swift */,
+				1AB9FDEC1ECC6EDB0060AE80 /* SkillCollectionViewCell.xib */,
+				1AB9FDEF1ECC91D70060AE80 /* ProjectCollectionViewCell.swift */,
+				1AB9FDF01ECC91D70060AE80 /* ProjectCollectionViewCell.xib */,
 				1AA657B51ECB40FE00A46378 /* SkillTableViewCell.swift */,
 				1AA657B91ECBE86E00A46378 /* EmployeeTableViewCell.swift */,
-				1AA657BA1ECBE86E00A46378 /* EmployeeTableViewCell.xib */,
+				1AB9FDE91ECC52230060AE80 /* EmployeeTableViewCell.xib */,
 				7ADDC46E1ECB163E00796170 /* SkillsTableViewCell.swift */,
 				7ADDC46F1ECB163E00796170 /* SkillsTableViewCell.xib */,
 				7ADDC4721ECB165200796170 /* ExperienceTableViewCell.swift */,
@@ -156,7 +169,7 @@
 		7AAB93801ECAB6C4007FFE1A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				1A042F371ECC27C600BC4435 /* FetchJSON.swift */,
+				1A042F371ECC27C600BC4435 /* JSONConverter.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -248,8 +261,11 @@
 			files = (
 				1AB279191ECAACDD00C6F02B /* LaunchScreen.storyboard in Resources */,
 				7ADDC4791ECB167100796170 /* ProjectTableViewCell.xib in Resources */,
+				1AB9FDEE1ECC6EDB0060AE80 /* SkillCollectionViewCell.xib in Resources */,
 				7ADDC4711ECB163E00796170 /* SkillsTableViewCell.xib in Resources */,
+				1AB9FDF21ECC91D70060AE80 /* ProjectCollectionViewCell.xib in Resources */,
 				7ADDC4751ECB165200796170 /* ExperienceTableViewCell.xib in Resources */,
+				1AB9FDEA1ECC52230060AE80 /* EmployeeTableViewCell.xib in Resources */,
 				1AB279161ECAACDD00C6F02B /* Assets.xcassets in Resources */,
 				1AB279141ECAACDD00C6F02B /* Main.storyboard in Resources */,
 			);
@@ -269,15 +285,17 @@
 				7ADDC47D1ECB1B9700796170 /* Experience.swift in Sources */,
 				7ADDC4831ECC293300796170 /* TeamCollectionViewCell.swift in Sources */,
 				1A81F71B1ECAF6C30009C4C5 /* SkillCategoryViewCell.swift in Sources */,
-				1A042F381ECC27C600BC4435 /* FetchJSON.swift in Sources */,
+				1A042F381ECC27C600BC4435 /* JSONConverter.swift in Sources */,
 				1AA657BB1ECBE86E00A46378 /* EmployeeTableViewCell.swift in Sources */,
 				7ADDC4701ECB163E00796170 /* SkillsTableViewCell.swift in Sources */,
 				1AB279251ECAF0C100C6F02B /* (null) in Sources */,
 				1A81F71F1ECAF72B0009C4C5 /* ViewController.swift in Sources */,
 				1AA657C01ECBEBCE00A46378 /* BrowseTutorVC.swift in Sources */,
+				1AB9FDF11ECC91D70060AE80 /* ProjectCollectionViewCell.swift in Sources */,
 				7ADDC47F1ECB1BA000796170 /* Project.swift in Sources */,
 				7ADDC4741ECB165200796170 /* ExperienceTableViewCell.swift in Sources */,
 				7ADDC4781ECB167100796170 /* ProjectTableViewCell.swift in Sources */,
+				1AB9FDED1ECC6EDB0060AE80 /* SkillCollectionViewCell.swift in Sources */,
 				1A81F71A1ECAF6C30009C4C5 /* SkillCategory.swift in Sources */,
 				1AA657B71ECB40FE00A46378 /* SkillTableViewCell.swift in Sources */,
 				7ADDC46B1ECB0C0000796170 /* ProfileViewController.swift in Sources */,

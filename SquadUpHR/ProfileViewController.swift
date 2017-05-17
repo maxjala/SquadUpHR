@@ -9,128 +9,147 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
-    
-    let mockProfile = ["name":"nick",
-                       "age":12,
-                       "project": "project A"] as [String : Any]
     
     @IBOutlet weak var profileImageView: UIImageView!
     
     @IBOutlet weak var skillsButton: UIButton!{
         didSet{
-            skillsButton.addTarget(self, action: #selector(skillsView), for: .touchUpInside)
+            skillsButton.addTarget(self, action: #selector(skillButtonTapped), for: .touchUpInside)
         }
     }
-    @IBOutlet weak var experienceButton: UIButton!{
-        didSet{
-            experienceButton.addTarget(self, action: #selector(experienceView), for: .touchUpInside)
-        }
-    }
+    
     @IBOutlet weak var projectsButton: UIButton!{
         didSet{
-            projectsButton.addTarget(self, action: #selector(projectView), for: .touchUpInside)
+            projectsButton.addTarget(self, action: #selector(projectButtonTapped), for: .touchUpInside)
         }
     }
     @IBOutlet weak var addSkillButton: UIButton!{
         didSet{
-            addSkillButton.addTarget(self, action: #selector(addSkills), for: .touchUpInside)
+            //addSkillButton.addTarget(self, action: #selector(addSkills), for: .touchUpInside)
         }
     }
     
-
-    @IBOutlet weak var tableView: UITableView! {
+    @IBOutlet weak var collectionView: UICollectionView! {
         didSet{
-            tableView.dataSource = self
-            tableView.delegate = self
+            collectionView.dataSource = self
+            collectionView.delegate = self
             
-            tableView.register(SkillsTableViewCell.cellNib, forCellReuseIdentifier: SkillsTableViewCell.cellIdentifier)
-            tableView.register(ExperienceTableViewCell.cellNib, forCellReuseIdentifier: ExperienceTableViewCell.cellIdentifier)
-            tableView.register(ProjectTableViewCell.cellNib, forCellReuseIdentifier: ProjectTableViewCell.cellIdentifier)
+            collectionView.register(SkillCollectionViewCell.cellNib, forCellWithReuseIdentifier: SkillCollectionViewCell.cellIdentifier)
+            collectionView.register(ProjectCollectionViewCell.cellNib, forCellWithReuseIdentifier: ProjectCollectionViewCell.cellIdentifier)
             
         }
     }
     
     var projects : [Project] = []
-    var experiecens : [Experience] = []
-    var selectedViews : [Any] = []
+    var skillCategory = SkillCategory.fetchCategories()
+    var activeArray : [Any] = []
     
+    let cellScaling: CGFloat = 0.6
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        
+        setCollectionViewProperties()
+        
+        mockProjects()
+        activeArray = skillCategory
+        collectionView.reloadData()
         
         
+        self.navigationController?.navigationBar.isHidden = true
     }
     
-    func skillsView(){
-    
+    func setCollectionViewProperties() {
+        let screenSize = UIScreen.main.bounds.size
+        let cellWidth = floor(screenSize.width * cellScaling)
+        let cellHeight = floor(screenSize.height * 0.4)
+        
+        let insetX = (view.bounds.width - cellWidth) / 2.0
+        let insetY = (view.bounds.height - cellHeight) / 2.0
+        
+        let layout = collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
+        collectionView?.contentInset = UIEdgeInsets(top: insetY, left: insetX, bottom: insetY, right: insetX)
     }
     
-    func experienceView(){
-    }
-    
-    func projectView(){
-        selectedViews = projects
-        self.tableView.reloadData()
+    func mockProjects() {
+        let proj1 = Project(anID: 123, aUserID: 123, aStatus: 2, aTitle: "iOS Project", aDesc: "Create HR App")
+        let proj2 = Project(anID: 123, aUserID: 123, aStatus: 2, aTitle: "iOS Project", aDesc: "Create HR App")
+        let proj3 = Project(anID: 123, aUserID: 123, aStatus: 2, aTitle: "iOS Project", aDesc: "Create HR App")
+        let proj4 = Project(anID: 123, aUserID: 123, aStatus: 2, aTitle: "iOS Project", aDesc: "Create HR App")
+        let proj5 = Project(anID: 123, aUserID: 123, aStatus: 2, aTitle: "iOS Project", aDesc: "Create HR App")
+        
+        projects = [proj1, proj2, proj3, proj4, proj5]
         
     }
     
-    func addSkills(){
+    func skillButtonTapped() {
+        activeArray = skillCategory
+        collectionView.reloadData()
     }
     
-    func convertToDict(projectInfo: [String : Any]) -> Project?{
-        if let projectID = projectInfo["projectId"] as? Int,
-        let userID = projectInfo["userId"] as? Int,
-        let status = projectInfo["status"] as? Int,
-        let projectTitle = projectInfo ["projectTitle"] as? String,
-        let projectDesc = projectInfo["projectDesc"] as? String{
-        
-        let project = Project(anID: projectID, aUserID: userID, aStatus: status, aTitle: projectTitle, aDesc: projectDesc)
-            
-            //self.projects.append(project)
-            return project
-        }
-        
-        return nil
-        
+    func projectButtonTapped() {
+        activeArray = projects
+        collectionView.reloadData()
     }
     
     
 }
-extension ProfileViewController: UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+
+extension ProfileViewController : UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath) as? ProjectTableViewCell else {return UITableViewCell() }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return activeArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
         
+        let currentObject = activeArray[indexPath.row]
+        
+        if let skillObject = currentObject as? SkillCategory {
+            
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SkillCollectionViewCell.cellIdentifier, for: indexPath) as? SkillCollectionViewCell else {return UICollectionViewCell()}
+            
+            cell.skillCategory = skillObject
+            
+            return cell
+            
+        }
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProjectCollectionViewCell.cellIdentifier, for: indexPath) as? ProjectCollectionViewCell else {return UICollectionViewCell()}
+        
+        let currentProject = currentObject as! Project
+        
+        cell.projectNameLabel.text = currentProject.projectTitle
+        //cell.descriptionLabel.text = currentProject.projectDesc
+        //cell.statusLabel.text = currentProject.status
+        cell.backgroundColor = skillCategory[indexPath.row].color
+        cell.alpha = 0.6
         return cell
     }
 }
 
-extension ProfileViewController: UITableViewDelegate{
-
+extension ProfileViewController : UIScrollViewDelegate, UICollectionViewDelegate {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let layout = self.collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
+        let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
+        
+        var offset = targetContentOffset.pointee
+        let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
+        let roundedIndex = round(index)
+        
+        offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
+        targetContentOffset.pointee = offset
+    }
+    
+    
+    
+    
+    
 }
 
 
-
-/*
-    TO DO:
- 
-    1. Projects Display.
-    2. Experience Display.
-    3. ability to add skills 
- 
- */
