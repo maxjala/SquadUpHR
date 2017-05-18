@@ -1,17 +1,14 @@
 //
-//  SkillsTableViewCell.swift
+//  ProjectViewCell.swift
 //  SquadUpHR
 //
-//  Created by nicholaslee on 16/05/2017.
+//  Created by Max Jala on 18/05/2017.
 //  Copyright © 2017 Max Jala. All rights reserved.
 //
 
 import UIKit
 
-class SkillsTableViewCell: UITableViewCell {
-    
-    static let cellIdentifier = "SkillsTableViewCell"
-    static let cellNib = UINib(nibName: SkillsTableViewCell.cellIdentifier, bundle: Bundle.main)
+class ProjectViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProjectCollectionViewCell: UICollectionViewCell {
+class ProjectRoleViewCell : UICollectionViewCell {
     
     @IBOutlet weak var roleLabel: UILabel!
     
@@ -18,8 +18,8 @@ class ProjectCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var statusLabel: UILabel!
     
-    static let cellIdentifier = "ProjectCollectionViewCell"
-    static let cellNib = UINib(nibName: ProjectCollectionViewCell.cellIdentifier, bundle: Bundle.main)
+    static let cellIdentifier = "ProjectRoleViewCell"
+    static let cellNib = UINib(nibName: ProjectRoleViewCell.cellIdentifier, bundle: Bundle.main)
 
     override func awakeFromNib() {
         super.awakeFromNib()
