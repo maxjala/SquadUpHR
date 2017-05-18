@@ -19,6 +19,17 @@ class SpecificCategoryVC: UIViewController {
         }
     }
     
+    
+    @IBOutlet weak var accentView: UIView! {
+        didSet {
+            accentView.layer.shadowRadius = 10
+            accentView.layer.shadowOpacity = 0.3
+            accentView.layer.shadowOffset = CGSize(width: 5, height: 10)
+            
+            accentView.clipsToBounds = false
+        }
+    }
+    
     var category : SkillCategory?
     var skills: [String] = []
 
@@ -26,6 +37,7 @@ class SpecificCategoryVC: UIViewController {
         super.viewDidLoad()
 
         categoryLabel.text = category?.title
+        accentView.backgroundColor = category?.color
         
         //Mock Skills
         skills = ["Adobe Photoshop", "Adobe Illustrator", "Web Design", "Painting", "Public Speaking", "Excel Spreadsheets", "Balance Sheets", "Web Development", "iOS Development", "Adobe Photoshop", "Adobe Illustrator", "Web Design", "Painting", "Public Speaking", "Excel Spreadsheets", "Balance Sheets", "Web Development", "iOS Development"]
@@ -42,6 +54,7 @@ extension SpecificCategoryVC : UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "skillCell") as? SkillTableViewCell else {return UITableViewCell()}
         cell.skillLabel.text = skills[indexPath.row]
         cell.skillLabel.textColor = category?.color
+        cell.skillLabel.alpha = 0.8
         
         return cell
         
