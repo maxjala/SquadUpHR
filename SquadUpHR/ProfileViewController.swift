@@ -162,6 +162,10 @@ extension ProfileViewController : UIScrollViewDelegate, UICollectionViewDelegate
         targetContentOffset.pointee = offset
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+    
     
     
     

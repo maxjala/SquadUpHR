@@ -14,7 +14,6 @@ class ProjectRoleViewCell : UICollectionViewCell {
     
     @IBOutlet weak var projectNameLabel: UILabel!
     
-    @IBOutlet weak var descriptionLabel: UILabel!
     
     @IBOutlet weak var statusLabel: UILabel!
     
