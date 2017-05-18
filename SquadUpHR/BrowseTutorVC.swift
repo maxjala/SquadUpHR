@@ -21,6 +21,17 @@ class BrowseTutorVC: UIViewController, MFMailComposeViewControllerDelegate {
         }
     }
     
+    @IBOutlet weak var accentView: UIView! {
+        didSet {
+            accentView.layer.shadowRadius = 10
+            accentView.layer.shadowOpacity = 0.4
+            accentView.layer.shadowOffset = CGSize(width: 5, height: 10)
+            
+            accentView.clipsToBounds = false
+        }
+    }
+    
+    
     var employees : [Employee] = []
     
 

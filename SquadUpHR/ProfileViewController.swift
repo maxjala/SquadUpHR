@@ -35,10 +35,21 @@ class ProfileViewController: UIViewController {
             collectionView.delegate = self
             
             collectionView.register(SkillCollectionViewCell.cellNib, forCellWithReuseIdentifier: SkillCollectionViewCell.cellIdentifier)
-            collectionView.register(ProjectCollectionViewCell.cellNib, forCellWithReuseIdentifier: ProjectCollectionViewCell.cellIdentifier)
+            collectionView.register(ProjectRoleViewCell.cellNib, forCellWithReuseIdentifier: ProjectRoleViewCell.cellIdentifier)
             
         }
     }
+    
+    @IBOutlet weak var accentView: UIView! {
+        didSet {
+            accentView.layer.shadowRadius = 10
+            accentView.layer.shadowOpacity = 0.4
+            accentView.layer.shadowOffset = CGSize(width: 5, height: 10)
+            
+            accentView.clipsToBounds = false
+        }
+    }
+    
     
     var projects : [Project] = []
     var skillCategory = SkillCategory.fetchCategories()
@@ -120,7 +131,7 @@ extension ProfileViewController : UICollectionViewDataSource {
             
         }
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProjectCollectionViewCell.cellIdentifier, for: indexPath) as? ProjectCollectionViewCell else {return UICollectionViewCell()}
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProjectRoleViewCell.cellIdentifier, for: indexPath) as? ProjectRoleViewCell else {return UICollectionViewCell()}
         
         let currentProject = currentObject as! Project
         
