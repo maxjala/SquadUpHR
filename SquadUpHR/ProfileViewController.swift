@@ -15,7 +15,12 @@ class ProfileViewController: UIViewController {
                        "age":12,
                        "project": "project A"] as [String : Any]
     
-    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var profileImageView: UIImageView! {
+        didSet{
+            profileImageView.layer.cornerRadius = profileImageView.frame.width/2
+            profileImageView.layer.masksToBounds = true
+        }
+    }
     
     @IBOutlet weak var skillsButton: UIButton!{
         didSet{
